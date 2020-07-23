@@ -1,3 +1,17 @@
 https://www.youtube.com/watch?v=lhNdUVh3qCc
 
 
+1 - jogo da memoria abordagem:
+   push(), querySelector(), setAttribute(), getAttribute(), createElement(), appendChild(), Math.random(), sort(), For loops
+
+
+
+
+
+
+
+
+
+
+
+
