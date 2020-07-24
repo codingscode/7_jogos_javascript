@@ -17,7 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
           {nome: 'xburger', imagem: './images/xburger.png'}
       ]
 
+
+      matrizCartas.sort(() => 0.5 - Math.random())
+
       const grade = document.querySelector('.grade')
+      const mostrarResultado = document.querySelector('#resultado')
+      var cartasEscolhidas = []
+      var cartasEscolhidasId = []
+      var cartasVenc = []
+
 
       // criar tabuleiro
       function criarTabuleiro() {
@@ -25,11 +33,51 @@ document.addEventListener('DOMContentLoaded', () => {
               var carta = document.createElement('img')
               carta.setAttribute('src', './images/blank.png')
               carta.setAttribute('data-id', i)
-              //carta.addEventListener('click', flipcard)
+              carta.addEventListener('click', virarCarta)
               grade.appendChild(carta)
       
           }
       
+      }
+
+      
+      // checar combinações
+      function checarCombinacao() {
+            var cartas = document.querySelectorAll('img')
+            const opcao1Id = cartasEscolhidasId[0]
+            const opcao2Id = cartasEscolhidasId[1]
+
+            if (cartasEscolhidas[0] === cartasEscolhidas[1]) {
+                alert('Você encontrou uma combinação')
+                cartas[opcao1Id].setAttribute('src', './images/white.png')
+                cartas[opcao2Id].setAttribute('src', './images/white.png')
+                cartasVenc.push(cartasEscolhidas)
+            }
+            else {
+                cartas[opcao1Id].setAttribute('src', './images/blank.png')
+                cartas[opcao2Id].setAttribute('src', './images/blank.png')
+                alert('Que pena, tente novamente')
+            }
+            cartasEscolhidas = []
+            cartasEscolhidasId = []
+            mostrarResultado.textContent = cartasVenc.length
+
+            if (cartasVenc.length === matrizCartas.length/2) {
+                mostrarResultado.textContent = 'Parabéns, você encontrou todos!'
+            }
+
+      }
+
+      // vire sua carta
+      function virarCarta() {
+            var idCarta = this.getAttribute('data-id')
+            cartasEscolhidas.push(matrizCartas[idCarta].nome)
+            cartasEscolhidasId.push(idCarta)
+            this.setAttribute('src', matrizCartas[idCarta].imagem)
+            
+            if (cartasEscolhidas.length === 2) {
+                setTimeout(checarCombinacao, 500)
+            }
       }
       
       criarTabuleiro()
