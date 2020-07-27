@@ -47,18 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const opcao1Id = cartasEscolhidasId[0]
             const opcao2Id = cartasEscolhidasId[1]
 
-            if (cartasEscolhidas[0] === cartasEscolhidas[1]) {
+            if (opcao1Id == opcao2Id) {
+                cartas[opcao1Id].setAttribute('src', './images/blank.png')
+                cartas[opcao2Id].setAttribute('src', './images/blank.png')
+                alert('Você clicou na mesma imagem!')
+            }
+            else if (cartasEscolhidas[0] === cartasEscolhidas[1]) {
                 alert('Você encontrou uma combinação')
                 cartas[opcao1Id].setAttribute('src', './images/white.png')
                 cartas[opcao2Id].setAttribute('src', './images/white.png')
                 cartas[opcao1Id].removeEventListener('click', virarCarta)
                 cartas[opcao2Id].removeEventListener('click', virarCarta)
                 cartasVenc.push(cartasEscolhidas)
-            }
-            else if (opcao1Id == opcao2Id) {
-                cartas[opcao1Id].setAttribute('src', './images/blank.png')
-                cartas[opcao2Id].setAttribute('src', './images/blank.png')
-                alert('Você clicou na mesma imagem!')
             }
             else {
                 cartas[opcao1Id].setAttribute('src', './images/blank.png')
