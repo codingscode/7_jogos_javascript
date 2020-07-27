@@ -51,7 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Você encontrou uma combinação')
                 cartas[opcao1Id].setAttribute('src', './images/white.png')
                 cartas[opcao2Id].setAttribute('src', './images/white.png')
+                cartas[opcao1Id].removeEventListener('click', virarCarta)
+                cartas[opcao2Id].removeEventListener('click', virarCarta)
                 cartasVenc.push(cartasEscolhidas)
+            }
+            else if (opcao1Id == opcao2Id) {
+                cartas[opcao1Id].setAttribute('src', './images/blank.png')
+                cartas[opcao2Id].setAttribute('src', './images/blank.png')
+                alert('Você clicou na mesma imagem!')
             }
             else {
                 cartas[opcao1Id].setAttribute('src', './images/blank.png')
@@ -63,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarResultado.textContent = cartasVenc.length
 
             if (cartasVenc.length === matrizCartas.length/2) {
-                mostrarResultado.textContent = 'Parabéns, você encontrou todos!'
+                mostrarResultado.textContent = `Parabéns, você encontrou todos! ${cartasVenc.length}`
             }
 
       }
