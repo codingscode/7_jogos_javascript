@@ -5,7 +5,12 @@ https://www.youtube.com/watch?v=lhNdUVh3qCc
    push(), querySelector(), setAttribute(), getAttribute(), createElement(), appendChild(), Math.random(), sort(), For loops
 
 
+2 - bater na toupeira
+   querySelector(), addEventListener(), setInterval(), classList(), forEach(), Arrow functions
 
+
+
+11:42
 
 
 

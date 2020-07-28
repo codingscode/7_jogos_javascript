@@ -1,0 +1,30 @@
+
+.quadrado {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: black;
+}
+
+.grade {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 618px;
+    height: 618px;
+}
+
+.toupeira {
+    background-image: url('./toupeira.jpg');
+    background-size: cover;
+}
+
+.classe1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#pontuacao, #tempo-restante {
+    margin-top: 0px;
+}
