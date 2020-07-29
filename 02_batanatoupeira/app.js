@@ -1,9 +1,10 @@
 const quadrado = document.querySelectorAll('.quadrado')
 const toupeira = document.querySelectorAll('.toupeira')
-const temporestante = document.querySelectorAll('#tempo-restante')
-let pontuacao = document.querySelectorAll('#pontuacao')
+const temporestante = document.querySelector('#tempo-restante')
+let pontuacao = document.querySelector('#pontuacao')
 
 let resultado = 0
+let tempoAtual = temporestante.textContent
 
 function quadradoAleatorio() {
    quadrado.forEach(nomeClasse => {
@@ -27,15 +28,22 @@ quadrado.forEach(id => {
 })
 
 function moverToupeira() {
-  let tempoId = null
-  tempoId = setInterval(quadradoAleatorio, 1000)
+    let cronometroId = null
+    cronometroId = setInterval(quadradoAleatorio, 1000)
 }
 
 moverToupeira()
 
+function contagemRegressiva() {
+    tempoAtual -= 1
+    temporestante.textContent = tempoAtual
 
+    if (tempoAtual === 0) {
+        clearInterval(cronometroId)
+        alert(`Fim de jogo! Sua pontuação final é ${resultado}`)
+        console.log(resultado)
+    }
+}
 
-
-
-
+let cronometroId = setInterval(contagemRegressiva, 1000)
 
