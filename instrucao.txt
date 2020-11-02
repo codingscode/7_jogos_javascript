@@ -13,8 +13,10 @@ https://www.youtube.com/watch?v=lhNdUVh3qCc
    querySelector(), addEventListener(), onclick, classList.contains(), classList.add(), for loops, arrow functions
 
     obs: clicar na parte inferior do quadrado
+    
+4 - 
 
 
-
+27min40s
 
 
