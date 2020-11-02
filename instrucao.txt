@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=lhNdUVh3qCc
 3 - conectar quatro
    querySelector(), addEventListener(), onclick, classList.contains(), classList.add(), for loops, arrow functions
 
-
+    obs: clicar na parte inferior do quadrado
 
 
 
