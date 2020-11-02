@@ -1,0 +1,22 @@
+.grade {
+  border: 1px solid;
+  display: flex;
+  flex-wrap: wrap;
+  height: 120px;
+  width: 140px;
+}
+
+.grade div {
+  height: 20px;
+  width: 20px;
+}
+
+.jogador-1 {
+  background-color: red;
+  border-radius: 10px;
+}
+
+.jogador-2 {
+  background-color: blue;
+  border-radius: 10px;
+}
