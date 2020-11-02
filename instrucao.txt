@@ -9,10 +9,8 @@ https://www.youtube.com/watch?v=lhNdUVh3qCc
    querySelector(), addEventListener(), setInterval(), classList(), forEach(), Arrow functions
 
 
-
-
-
-
+3 - conectar quatro
+   querySelector(), addEventListener(), onclick, classList.contains(), classList.add(), for loops, arrow functions
 
 
 
